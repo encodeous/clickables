@@ -1,0 +1,8 @@
+name: Clickables
+version: ${project.version}
+main: ca.encodeous.clickables.Clickables
+api-version: 1.13
+depend:
+  - NBTAPI
+authors: [Encodeous]
+description: Clickable Hotbar Items in Minecraft
