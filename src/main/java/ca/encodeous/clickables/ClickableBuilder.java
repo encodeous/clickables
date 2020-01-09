@@ -19,13 +19,13 @@ public class ClickableBuilder {
         ID = id;
         ClickItem = item.clone();
         // Add identifier to prevent renaming, crafting and etc
-        NBTItem container = new NBTItem(ClickItem);
-        if(container.getString("CLICKABLE_ID") == null){
-            container.setString("CLICKABLE_ID",ID);
+        NBTItem nbtItem = new NBTItem(ClickItem);
+        if(nbtItem.getString("CLICKABLE_ID").equals("")){
+            nbtItem.setString("CLICKABLE_ID",ID);
         }else{
             throw new InvalidObjectException("Item selected for clickable is already used by clickable.");
         }
-        ClickItem = container.getItem();
+        ClickItem = nbtItem.getItem();
         ClickActions = new ItemStackClickable();
         ClickActions.clickItems = ClickItem;
     }

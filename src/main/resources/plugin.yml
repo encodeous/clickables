@@ -2,7 +2,32 @@ name: Clickables
 version: ${project.version}
 main: ca.encodeous.clickables.Clickables
 api-version: 1.13
-depend:
-  - NBTAPI
+depend: [NBTAPI]
 authors: [Encodeous]
 description: Clickable Hotbar Items in Minecraft
+commands:
+  clickables:
+    description: /clickables - Main Clickables Command
+    aliases: [click]
+  clbuilder:
+    description: Creates a clickable item - Requires encodeous.clickables.builder permission
+    aliases: [clickbuild,clickb]
+    permission: encodeous.clickables.itembuilder
+  clremove:
+    description: <id> - Removes a clickable item - Requires encodeous.clickables.remove
+    aliases: [clickrem,clickdel]
+    permission: encodeous.clickables.removeclickable
+    usage: /clremove <id>
+  clgive:
+    description: <player> <amount> <id> - Gives a specified amount of a clickable item to the player - Requires encodeous.clickables.give
+    permission: encodeous.clickables.give
+    usage: /clgive <player> <amount> <id>
+  clist:
+    description: Lists all Clickables - Requires encodeous.clickables.list
+    permission: encodeous.clickables.list
+  clreload:
+    description: Reloads all Clickables data - Requires encodeous.clickables.reload
+    permission: encodeous.clickables.reload
+permissions:
+  encodeous.clickables.use:
+    description: Allows the usage of clickables
